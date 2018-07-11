@@ -16,8 +16,9 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path('incassogen/', include('incassogen.urls')),
     path('admin/', admin.site.urls),
+    path('', include('incassogen.urls')),
 ]

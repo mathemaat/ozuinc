@@ -1,0 +1,19 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Incassogen</title>
+    <link rel="stylesheet" href="{% static "css/application.css" %}" type="text/css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Incassogen</h1>
+    </div>
+    <div id="body">
+      {% block body %} CONTENT HERE {% endblock %}
+    </div>
+    <div id="footer">
+      &#169; {% now "Y" %}
+    </div>
+  </body>
+</html>
