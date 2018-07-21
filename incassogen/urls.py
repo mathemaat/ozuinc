@@ -6,4 +6,5 @@ app_name = 'incassogen'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('generate', views.generate, name='generate'),
 ]

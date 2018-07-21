@@ -1,5 +1,14 @@
 {% extends "outline.html" %}
 
 {% block body %}
-  Hello, world. You're at the incassogen index.
+  <form method="post" enctype="multipart/form-data" action="{% url 'incassogen:generate' %}">
+    {% csrf_token %}
+    <input type="file" name="machtigingencsv" />
+    <input type="submit" value="Upload" />
+  </form>
+  {% if error %}
+    <p style="color:red">
+      {{ error }}
+    </p>
+  {% endif %}
 {% endblock %}
