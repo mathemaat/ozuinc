@@ -5,6 +5,15 @@ class Iban(object):
 
     PARSE_VALUE_ERROR = 'unable to parse iban'
 
+    BANK_IDENTIFIERS = {
+        'INGB': 'INGBNL2A',
+        'RABO': 'RABONL2U',
+        'ABNA': 'ABNANL2A',
+        'ASNB': 'ASNBNL21',
+        'SNSB': 'SNSBNL2A',
+        'TRIO': 'TRIONL2U',
+    }
+
     def __init__(self, value):
         self.value = value
         self.sanitise()
@@ -53,11 +62,14 @@ class Iban(object):
             return False
         if self.get_country_code() != 'NL':
             return False
-        if self.get_bank_code() not in ['INGB', 'RABO', 'ABNA', 'ASNB', 'SNSB', 'TRIO']:
+        if self.get_bank_code() not in self.BANK_IDENTIFIERS.keys():
             return False
         if self.calculate_check_digits() != self.get_check_digits():
             return False
         return True
+
+    def get_bic_code(self):
+        return self.BANK_IDENTIFIERS[self.get_bank_code()]
 
     @staticmethod
     def parse_from_string(value):
