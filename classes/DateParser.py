@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date
 
 
 class DateParser(object):
@@ -19,6 +19,6 @@ class DateParser(object):
             year = int(units[2])
             month = int(units[1])
             day = int(units[0])
-            return datetime(year, month, day)
+            return date(year, month, day)
         except ValueError:
             raise ValueError(DateParser.PARSE_VALUE_ERROR)
