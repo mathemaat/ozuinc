@@ -1,5 +1,5 @@
 from classes.CSVParser import CSVParser
-
+from classes.OZUMember import OZUMember
 
 '''
 $clients = array(
@@ -40,3 +40,18 @@ class MachtigingenCSVParser(CSVParser):
 
     def validate(self):
         pass
+
+    def get_ozu_members(self):
+        members = []
+        for row in self.rows:
+            member = OZUMember(
+                row[self.KOLOM_MANDAAT_ID],
+                row[self.KOLOM_DATUM_HANDTEKENING],
+                row[self.KOLOM_CONTRIBUTIEBEDRAG],
+                row[self.KOLOM_IBAN],
+                row[self.KOLOM_TEN_NAME_VAN],
+                row[self.KOLOM_KNSB_NUMMER],
+                row[self.KOLOM_LIDMAATSCHAP],
+            )
+            members.append(member)
+        return members

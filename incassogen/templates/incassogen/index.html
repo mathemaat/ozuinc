@@ -3,6 +3,7 @@
 {% block body %}
   <form method="post" enctype="multipart/form-data" action="{% url 'incassogen:generate' %}">
     {% csrf_token %}
+    <p>{{ seizoen }}</p>
     <input type="file" name="machtigingencsv" />
     <input type="submit" value="Upload" />
   </form>
