@@ -21,7 +21,7 @@ class MachtigingenCSVParser(CSVParser):
     # definieer kolomnummers
     KOLOM_MANDAAT_ID = 0
     KOLOM_DATUM_HANDTEKENING = 1
-    KOLOM_BEDRAG = 2
+    KOLOM_CONTRIBUTIEBEDRAG = 2
     KOLOM_IBAN = 3
     KOLOM_KNSB_NUMMER = 5
     KOLOM_TEN_NAME_VAN = 6
@@ -31,7 +31,7 @@ class MachtigingenCSVParser(CSVParser):
         self.column_definitions = {
             self.KOLOM_MANDAAT_ID: CSVParser.TYPE_INTEGER,
             self.KOLOM_DATUM_HANDTEKENING: CSVParser.TYPE_DATE,
-            self.KOLOM_BEDRAG: CSVParser.TYPE_FLOAT,
+            self.KOLOM_CONTRIBUTIEBEDRAG: CSVParser.TYPE_FLOAT,
             self.KOLOM_IBAN: CSVParser.TYPE_IBAN,
             self.KOLOM_TEN_NAME_VAN: CSVParser.TYPE_STRING,
             self.KOLOM_KNSB_NUMMER: CSVParser.TYPE_INTEGER,
