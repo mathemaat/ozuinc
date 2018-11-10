@@ -23,8 +23,8 @@ class MachtigingenCSVParser(CSVParser):
     KOLOM_DATUM_HANDTEKENING = 1
     KOLOM_BEDRAG = 2
     KOLOM_IBAN = 3
-    KOLOM_TEN_NAME_VAN = 4
     KOLOM_KNSB_NUMMER = 5
+    KOLOM_TEN_NAME_VAN = 6
     KOLOM_LIDMAATSCHAP = 16
 
     def set_column_definitions(self):
