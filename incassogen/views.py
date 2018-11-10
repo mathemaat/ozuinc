@@ -35,3 +35,5 @@ def generate(request):
             return HttpResponse('<br />'.join(csvparser.validation_errors()))
     else:
         return HttpResponse('<br />'.join(csvparser.get_sanitisation_errors()))
+
+# incasso.generate_incasso(datetime(2017, 10, 19, 18, 31, 19, 0))
